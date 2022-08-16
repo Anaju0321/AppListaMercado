@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppListaMercado.View.ListaProdutos"
+             Title="Lista SuperMercado"
+               BackgroundImage="lista.png">
+
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Novo" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+
+
+            <RefreshView x:Name="ref_carregando" IsRefreshing="true">
+                <ListView x:Name="lst_produtos" ItemSelected="lst_produtos_ItemSelected">
+                    <ListView.Header>
+                        <Grid RowDefinitions="Auto"
+                              ColumnDefinitions="*, 80, 80">
+                            <Label Grid.Row="0" Grid.Column="0" Text="Descrição"
+                                   FontSize="Large"
+                                    TextColor="White"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Qnt"
+                                   FontSize="Large"
+                                     TextColor="White"/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="Preço" 
+                                   FontSize="Large"
+                                     TextColor="White"/>
+                          
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Remover" Clicked="MenuItem_Clicked"  />
+                                </ViewCell.ContextActions>
+
+                                <Grid RowDefinitions="Auto"
+                                      ColumnDefinitions="*, Auto, Auto">
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Descricao}" 
+                                           FontSize="Large"
+                                             TextColor="White"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Quantidade}" 
+                                           FontSize="Large"
+                                             TextColor="White"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding Preco}"
+                                           FontSize="Large"
+                                             TextColor="White"/>
+                                   
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RefreshView>
+            <Button Text="Total da compra" Clicked="Button_Clicked" BackgroundColor="White"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

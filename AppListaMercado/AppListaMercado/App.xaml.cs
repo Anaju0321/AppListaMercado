@@ -1,6 +1,9 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using AppListaMercado.View;
+
+
 
 namespace AppListaMercado
 {
@@ -10,7 +13,7 @@ namespace AppListaMercado
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new View.ListaProdutos());
         }
 
         protected override void OnStart()
