@@ -37,7 +37,7 @@ namespace AppListaMercado.View
 
         private void lst_produtos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            Navigation.PushAsync(new EditarProduto());
         }
     }
 }
