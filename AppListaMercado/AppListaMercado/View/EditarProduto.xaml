@@ -37,7 +37,7 @@
 
 
             <Button Text="Salvar alterações" FontSize="Large"
-                   TextColor="Black"  Clicked="Button_Clicked"/>
+                   TextColor="Black" Clicked="Button_Clicked"/>
 
 
 

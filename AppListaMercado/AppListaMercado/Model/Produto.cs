@@ -6,7 +6,7 @@ using SQLite;
 
 namespace AppListaMercado.Model
 {
-    internal class Produto
+    public class Produto
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
